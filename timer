@@ -1,0 +1,11 @@
+	
+	var nowTime = new Date(); // 現在日時を得る
+	var today = nowTime.getDate();
+	var hours = ("0"+nowTime.getHours()).slice(-2);
+	var minutes = ("0"+nowTime.getMinutes()).slice(-2);
+	var seconds = ("0"+nowTime.getSeconds()).slice(-2);
+	
+	return 
+	
+window.setTimeout(hypeDocument.functions().timer, 1000, hypeDocument);//TimeFunction2を1秒ごとに実行
+

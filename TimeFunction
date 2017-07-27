@@ -1,0 +1,42 @@
+	
+	var nowTime = new Date(); // 現在日時を得る
+	var today = nowTime.getDate();
+	var hours = ("0"+nowTime.getHours()).slice(-2);
+	var minutes = ("0"+nowTime.getMinutes()).slice(-2);
+	var seconds = ("0"+nowTime.getSeconds()).slice(-2);
+				
+	document.getElementById('timeDisplay').innerHTML = hours + ":" + minutes + ":" + seconds;//時刻表示
+	
+	var delayTime = new Date(); // 現在時刻-5分
+	delayTime.setMinutes(delayTime.getMinutes() - 5);
+	var delayToday = delayTime.getDate();
+	var delayHours = ("0"+delayTime.getHours()).slice(-2);
+	var delayMinutes = ("0"+delayTime.getMinutes()).slice(-2) ;
+	var DelaySeconds = ("0"+delayTime.getSeconds()).slice(-2);
+		
+	var seminar1 = ["09:30","14:00","15:30"];
+	var seminar2 = ["10:00","14:00"];
+	var seminar = [];
+	
+	if ( today <= 9 ){seminar = seminar1};
+	if ( today == 9){seminar = seminar2};
+
+	var times = delayHours + ":" + delayMinutes;
+	
+	console.log(times);
+	
+         for ( var i=0; i < seminar.length; i++) 
+        {
+           if ( seminar[i] > times ) 
+           {
+             document.getElementById('seminarTime').innerHTML = seminar[i];document.getElementById('endText').style.display='none';
+         break;
+           }else {document.getElementById('seminarTime').innerHTML = "";document.getElementById('endText').style.display='block';
+}
+        }
+        
+ 		
+window.setTimeout(hypeDocument.functions().TimeFunction, 1000, hypeDocument);//TimeFunctionを1秒ごとに実行
+
+		
+	
